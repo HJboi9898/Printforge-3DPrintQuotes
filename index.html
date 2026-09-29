@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrintForge - Custom MakerWorld 3D Printing Quotes</title>
+<style>
+:root {
+  --primary: #ff5500;
+  --primary-hover: #e04b00;
+  --dark: #1a1a1a;
+  --light: #f9f9f9;
+  --gray: #666;
+  --border: #ddd;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+header { background-color: var(--dark); color: white; padding: 1.5rem 2rem; position: sticky; top: 0; z-index: 100; }
+
+.header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
+.logo h1 { font-size: 1.8rem; font-weight: 800; }
+
+.logo span { color: var(--primary); }
+
+.hero { background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), linear-gradient(135deg, #2a2a2a, #1a1a1a); color: white; padding: 5rem 2rem; text-align: center; }
+
+.hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #ccc; }
+
+.btn { display: inline-block; background-color: var(--primary); color: white; padding: 0.8rem 2rem; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; text-decoration: none; cursor: pointer; text-align: center; }
+
+.btn:hover { background-color: var(--primary-hover); }
+
+.btn-secondary { background-color: #444; margin-bottom: 1rem; }
+
+.btn-secondary:hover { background-color: #555; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+
+.step-card { background: white; padding: 2rem; border-radius: 8px; text-align: center; border: 1px solid var(--border); }
+
+.step-number { background-color: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto 1rem; }
+
+.order-section { background: white; max-width: 700px; margin: 0 auto; padding: 3rem; border-radius: 12px; border: 1px solid var(--border); }
+
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+
+.form-submit-btn { width: 100%; padding: 1rem; margin-top: 1rem; }
+
+.notice { max-width: 700px; margin: 0 auto 1.5rem; background: #fff4e5; border: 1px solid #ffd9a8; color: #7a4a00; padding: 0.9rem 1.2rem; border-radius: 8px; font-size: 0.9rem; text-align: center; }
+
+footer { background-color: var(--dark); color: #aaa; text-align: center; padding: 2rem; margin-top: 4rem; }
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-container">
+<div class="logo"><h1>Print<span>Forge</span></h1></div>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Get Custom MakerWorld Prints</h2>
+<p>Find a model, send us the link, and we will email you a custom price quote!</p>
+<a href="#order-form" class="btn">Get a Quote Below</a>
+</div>
+</section>
+
+<div class="container">
+<section class="steps">
+<div class="step-card">
+<div class="step-number">1</div>
+<h3>Find a Model</h3>
+<p>Use the button below to browse MakerWorld and find an item you want printed.</p>
+</div>
+<div class="step-card">
+<div class="step-number">2</div>
+<h3>Submit the Link</h3>
+<p>Paste the website link into our form and click the email button.</p>
+</div>
+<div class="step-card">
+<div class="step-number">3</div>
+<h3>Get Your Price Quote</h3>
+<p>We will check the design file and email you back with a custom price quote!</p>
+</div>
+</section>
+
+<section id="order-form">
+<h2 class="section-title">Submit Design for Quote</h2>
+<div class="order-section">
+
+<div style="text-align: center; margin-bottom: 1.5rem;">
+<p style="margin-bottom: 0.5rem; font-weight: 600;">Don't have a link yet?</p>
+<a href="https://makerworld.com" target="_blank" class="btn btn-secondary">Open MakerWorld Website ↗</a>
+</div>
+
+<form id="makerWorldForm">
+<div class="form-group">
+<label for="makerLink">MakerWorld Model Link *</label>
+<input type="url" id="makerLink" required placeholder="https://makerworld.com...">
+</div>
+
+<div class="form-group">
+<label for="material">Material Preference</label>
+<select id="material">
+<option value="PLA (Standard - Great for display)">PLA (Standard - Great for display)</option>
+<option value="PETG (Durable - Functional parts)">PETG (Durable - Functional parts)</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="color">Colour Choice</label>
+<input type="text" id="color" placeholder="e.g. Black, Red, White">
+</div>
+
+<div class="form-group">
+<label for="notes">Notes / Special Instructions</label>
+<textarea id="notes" rows="4" placeholder="Any scaling options or special needs?"></textarea>
+</div>
+
+<button type="submit" class="btn form-submit-btn" id="submitBtn">Email Me For My Price Quote</button>
+<p id="formStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></p>
+</form>
+</div>
+</section>
+</div>
+
+<footer>
+<p>&copy; 2026 PrintForge Shop. Custom quotes emailed directly to you.</p>
+</footer>
+
+<script>
+const QUOTE_EMAIL = "105196@student.brisbanechristiancollege.com.au,105015@student.brisbanechristiancollege.com.au";
+
+document.getElementById('makerWorldForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const modelLink = document.getElementById('makerLink').value;
+  const chosenMaterial = document.getElementById('material').value;
+  const chosenColor = document.getElementById('color').value || "No preference";
+  const customerNotes = document.getElementById('notes').value || "None";
+
+  const subject = "Quote Request: MakerWorld Print Job";
+  const body =
+    "Model Link: " + modelLink + "\n" +
+    "Material: " + chosenMaterial + "\n" +
+    "Colour: " + chosenColor + "\n" +
+    "Notes: " + customerNotes;
+
+  const statusEl = document.getElementById('formStatus');
+  statusEl.style.color = "#1a7a1a";
+  statusEl.textContent = "Opening your email app... press Send to submit your request.";
+
+  window.location.href = "mailto:" + QUOTE_EMAIL +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
